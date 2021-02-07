@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function printResult() {
+            var x, y;
+            x = 3;
+            y = 6;
+
+            btnPrint.value = x+y;
+        }
+        // 이렇게 하면 btnPrint가 선언되기 전에 사용되기 때문에 오류 발생함.
+        // btnPrint.onclick = printResult;
+
+        // 그래서 다음과 같이 한다. 함수 안에 넣음으로써 window가 로드되기 전에 실행되는 것을 막는다.
+        function init() {
+            btnPrint.onclick = printResult;
+        }
+
+        // 아래와 같이 window 가 모두 로드되면 실행되게 한다.
+        window.onload = init;
+    </script>
+    
+</head>
+<body>
+    <input type="button" value="출력" id="btnPrint" />
+</body>
+</html>

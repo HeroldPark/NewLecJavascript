@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = 3;
+        var y = 5;
+        window.alert(x+y);
+
+        x = prompt("x 값을 입력하세요.", 0);
+        y = prompt("y 값을 입력하세요.", 0);
+        x = parseInt(x);
+        y = parseInt(y);
+        alert(x+y);
+
+        // developer.mozilla.org 참조
+
+        var a = "123abc";
+        var x = parseInt(a);    // return '123'
+        alert(x);
+
+        var answer = confirm("삭제 할려고요?");
+        if(answer)  alert("삭제되었습니다.");
+    </script>
+</body>
+</html>

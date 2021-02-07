@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = 9;
+        if(x == undefined)
+            alert("undefined");
+        else alert("Hello World");
+
+        // auto boxing 또는 wrapping 이라함.
+        var z;
+        z = 4;
+        alert(typeof z);
+
+        var nums = new Array();
+        var nums = new Array(5);
+        var nums = new Array(4, 7, 10);
+        var nums = new Array(4, 7, 10, "Hello");
+        alert(typeof nums[3]);
+        var nums = new Array(5, 10, 13, new Array(4, 5, 7));
+        alert(nums[3][2]);
+
+        // stack
+        // 적제
+        nums.push(5);
+        console.log(nums);
+        // 꺼내기
+        nums.pop();
+        console.log(nums);
+    </script>
+    
+</body>
+</html>

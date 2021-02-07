@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 페이지가 읽혀질때 실행.
+        function printResult() {
+            var x, y;
+            x = 3;
+            y = 6;
+            alert(x+y);
+        }
+    </script>
+
+    <!-- // 이벤트가 발생할때 실행. -->
+    <input type="button" value="클릭" onclick="alert('안녕하세요~');" /><br />
+    <span onclick="alert('Hello');"> 스팬입니다.</span><br/>
+    <span onclick="printResult();">결과 프린트</span>
+</body>
+</html>

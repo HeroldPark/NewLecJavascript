@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 기본적으로 사용하는 방법
+        var exam = new Object();
+        exam.kor = 30;
+        exam.eng = 40;
+        exam.math = 50;
+
+        console.log(exam.kor + exam.eng + exam.math);
+
+        // 위의 방법에서 key를 가지고 값을 꺼내 사용해야 할 경우 사용.
+        exam["kor"] = 30;
+        exam["eng"] = 40;
+        exam["math"] = 50;
+
+        console.log(exam["kor"]);
+
+        var key = "kor";
+        console.log(exam["kor"]);
+
+        // 잘못된 오류
+        var key = kor;
+        console.log(exam[kor]);
+
+        // Javascript는 Object에서 Map형(Hash table)과 Array형(List Table)를 제공한다.
+
+    </script>
+    
+</body>
+</html>

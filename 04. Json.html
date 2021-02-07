@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML, CSV, JSON</title>
+</head>
+<body>
+    <script>
+        var exam = {"kor":30, "eng":40, "math":50};
+        var ar = [2, 3, 4, exam, [5,6,7]];
+
+        document.write(ar[4][1]);
+        document.write("<br/>");
+        document.write(ar[3].math);
+        document.write("<br/>");
+
+        var notice = {"id":1, "title":"hello"};
+        console.log(notice.title);
+
+        eval('var x = 30;');
+        console.log(x);
+
+        var market = '[ \
+            {"guname":"은평구","m_addr":"갈현동 424-16","m_name":"갈현시장","lng":126.9173853,"m_code":"22","lat":37.6235874}, \
+            {"guname":"동작구","m_addr":"상도동 488","m_name":"강남시장","lng":127.0206399,"m_code":"12","lat":37.5187486}, \
+            {"guname":"강남구","m_addr":"신사동510-11","m_name":"강남시장","lng":126.9534877,"m_code":"1","lat":37.4967455} \
+        ]';
+
+        eval("var ar = " + market + ";");
+        console.log(ar[1].m_addr);
+
+        var data = {id:1, title:"aaa"};
+        console.log(data.title);
+
+        // JSON.parse()를 사용할 경우 key를 "key"로 표현해야 한다.
+        var data = JSON.parse('{"id":1, "title":"Hello"}');
+        console.log(data.title);
+
+        var data2 = {id:2, title:"abc"};
+        var json = JSON.stringify(data2);
+        alert(json);
+    </script>
+</body>
+</html>
