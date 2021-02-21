@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- document 객체를 대신하는 jQuery객체를 제공한다. -->
+    <img id="img1" />
+    <script>
+        // 이렇게 사용하는 것은 javascript document 객체를 사용하는 방법이다.
+        // img1.src = "images/img1.jpg";
+        // var img1 = document.querySelector("#img1");
+        // document.writeln("new line");
+
+        // jQuery로 사용...
+        // jQuery(img1).attr("src", "images/img2.jpg");
+        $("#img1").attr("src", "images/img1.jpg");
+    </script>
+
+</body>
+</html>

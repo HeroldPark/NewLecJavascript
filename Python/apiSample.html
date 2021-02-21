@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>카카오 API 이용방법...</h1>
+  <input id="bookName" type="text" value="">
+  <button id="search">검색</button>
+  <p></p>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous">
+    </script>
+    <script>
+      //$(function(){
+        $("#search").click(function() {
+          var query = "{query: "+JSON.stringify($("#bookName").val())+"}";
+          //var query = "{query: "+$("#bookName").val()+"}";
+          console.log("Query=", query);
+
+          $.ajax({
+            method: "GET",
+            url: "https://dapi.kakao.com/v3/search/book?target=title",
+            //data: {query: "미움받을 용기"},
+            //data: { query: $("bookName").val() },
+            data: query,
+            headers: {Authorization: "KakaoAK 21974b3a82181ab6fea717d39a0856be"}
+          }).done(function(msg) {
+            //console.log(`Data Saved {}`, msg);
+            //console.log(`Data Saved : ${msg}`);
+            //console.log(`Title: ${msg.documents[0].title}`);
+            console.log("BookName : ", $("#bookName").val() );
+            console.log("Title: ", msg.documents[0].title);
+
+            //console.log("Title: " + msg.documents[0].title);
+            console.log("Authors: " + msg.documents[0].authors);
+            console.log("Thumbnail: " + msg.documents[0].thumbnail);
+
+            $( "p" ).append( "<strong>"+"Title : " + msg.documents[0].title+"</strong><br>" );
+            $( "p" ).append( "<strong>"+"Authors : " + msg.documents[0].authors+"</strong><br>" );
+            $( "p" ).append( "<img src='"+ msg.documents[0].thumbnail + "'/>" );
+
+          });
+        });
+      //});
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+DI(Dependancy Injection : 부품 조립)
+1. Setter Injection
+    B b = new B();
+    A a = new A();
+    a.setB(b);
+
+2. Construction Injection
+    B b = new B();
+    A a = new A(b);
+
+IoC(Inversion of Control) Container
+
+AOP(Aspect Oriented Programming)
+1. 사용자 관점 => 주 업무 로직(객체 지향)
+2. 개발자 관점 => 부1 업무 로직 : 로그, 보안, 트랜잭션
+3. 운영자 관점 => 부2 업무 로직
+
+이와 같이 보는 관점이 다른 시각에서 필요한 기능들을 개발한다.
+1을 Primary(Core) concren이라고 한다.
+2, 3을 Cross-Cutting concern이라고 한다.
+
+포인터 컷(PointCuts), JoinPoint , Weaving
+- AOP가 Advice 부분과 타겟을 묶어서 실행하는 것을 Weaving이라 한다.
+- AOP가 Weaving할때 사용하는 타겟에서 각각의 Method를 JoinPoint라고 한다.
+- JoinPoint 중에서도 실행하고자 하는 특정 Method를 PointCuts이라고 한다.
+
+JSPProj

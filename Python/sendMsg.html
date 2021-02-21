@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slack을 이용하여 SMS 보내기</title>
+</head>
+<body>
+    <script>
+        // 사용방법
+        // 먼저 api.slack.com으로 접속하여 사용할 workspace을 선택하고 chat-bot을 생성한다.
+        // OAuth & Permissions 에서 OAuth Tokens for Your Team을 받는다.
+        // npm install @slack/web-api @slack/events-api
+        // 
+        const { WebClient } = require('@slack/web-api');
+
+        // An access token (from your Slack app or custom integration - xoxp, xoxb)
+        const token = process.env.SLACK_TOKEN;
+
+        const web = new WebClient(token);
+
+        // This argument can be a channel ID, a DM ID, a MPDM ID, or a group ID
+        const conversationId = 'C1232456';
+
+        (async () => {
+        // See: https://api.slack.com/methods/chat.postMessage
+        const res = await web.chat.postMessage({ channel: conversationId, text: 'Hello there' });
+
+        // `res` contains information about the posted message
+        console.log('Message sent: ', res.ts);
+        })();
+    </script>
+
+    
+</body>
+</html>
